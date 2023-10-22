@@ -5,8 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        heading: 'Cormorant Garamond, serif',
+        paragraph: 'Satisfy, cursive' ,
+      }
+    },
   },
   plugins: [require("daisyui")],
 }
-
