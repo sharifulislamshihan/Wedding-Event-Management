@@ -1,0 +1,67 @@
+[
+      {
+        "id": 1,
+        "serviceName": "Wedding Planning",
+        "image": "https://i.ibb.co/r5ywxCD/laughing-man-his-lady-with-pink-hair-sit-dinner-table-with-pink-decor.jpg",
+        "price": "$5,000",
+        "shortDescription": "Comprehensive wedding planning services.",
+        "detailsDescription": "Our full-service wedding planning package includes everything you need to make your dream wedding a reality. From venue selection to decor, catering, and entertainment, we handle it all. Our experienced team of wedding planners will work closely with you to create a custom wedding plan that matches your vision and budget. With our attention to detail and commitment to excellence, you can relax and enjoy every moment of your special day, knowing that we have everything under control. Let us turn your dream wedding into a stress-free reality."
+      },
+      {
+        "id": 2,
+        "serviceName": "Venue Selection",
+        "image": "https://i.ibb.co/W57wWd3/venue-selection.jpg",
+        "price": "$1,500",
+        "shortDescription": "Expert assistance in choosing the perfect wedding venue.",
+        "detailsDescription": "We help you find the ideal venue that suits your style and budget. Whether it's a rustic barn, a beachfront location, or a grand ballroom, we've got you covered. Our team of venue experts will provide you with a curated list of options, complete with detailed information and visuals. We'll also negotiate the best deals for you and assist with booking the venue that resonates with your wedding vision. Count on us to ensure that your chosen venue is a stunning backdrop for your special day."
+      },
+      {
+        "id": 3,
+        "serviceName": "Catering Services",
+        "image": "https://i.ibb.co/3pYJQQg/catering-services.jpg",
+        "price": "$3,000",
+        "shortDescription": "Delicious and diverse catering options.",
+        "detailsDescription": "From exquisite multi-course meals to food stations and buffet setups, our catering services offer a wide range of culinary options to satisfy your guests. Our talented chefs and catering staff are committed to creating a menu that suits your tastes and dietary requirements. We prioritize the use of fresh, locally-sourced ingredients to craft delicious and visually appealing dishes. Your wedding guests will savor every bite, making your celebration a gastronomic delight."
+      },
+      {
+        "id": 4,
+        "serviceName": "Floral Design",
+        "image": "https://i.ibb.co/tqkNFGB/floral-design.jpg",
+        "price": "$1,200",
+        "shortDescription": "Stunning floral arrangements for your special day.",
+        "detailsDescription": "Our floral designers create beautiful bouquets, centerpieces, and decor that will enhance the overall ambiance of your wedding venue. We pay meticulous attention to detail, ensuring that every floral arrangement complements your wedding theme and color scheme. From traditional to modern and everything in between, our designs are tailored to your preferences. The scent of fresh flowers and the sight of exquisite floral arrangements will leave a lasting impression on your guests."
+      },
+      {
+        "id": 5,
+        "serviceName": "Photography and Videography",
+        "image": "https://i.ibb.co/f4vMdhK/photography.jpg",
+        "price": "$2,800",
+        "shortDescription": "Capture every moment with our skilled photographers and videographers.",
+        "detailsDescription": "We have a team of talented photographers and videographers who will document your special day, ensuring that you have lasting memories to cherish. From candid shots to meticulously staged photos, we capture the emotions, details, and moments that make your wedding unique. Our videographers create cinematic wedding films that allow you to relive your special day. With the latest equipment and a creative eye, we produce images and videos that tell your love story beautifully."
+      },
+      {
+        "id": 6,
+        "serviceName": "Entertainment and DJ",
+        "image": "https://i.ibb.co/JHCHXbh/entertainment.jpg",
+        "price": "$1,800",
+        "shortDescription": "Keep the party going with top-notch entertainment and DJ services.",
+        "detailsDescription": "Our professional entertainers and DJs will create a lively and memorable atmosphere for your wedding celebration, keeping the dance floor busy all night. From live bands to DJs who specialize in various music genres, we offer entertainment options that cater to your preferences. Our team works closely with you to plan the perfect entertainment lineup, ensuring that your wedding is filled with energy, music, and fun that you and your guests will remember for years to come."
+      },
+      {
+        "id": 7,
+        "serviceName": "Invitations and Stationery",
+        "image": "https://i.ibb.co/jvWsbRw/invitation.jpg",
+        "price": "$500",
+        "shortDescription": "Elegant and customized invitations and stationery.",
+        "detailsDescription": "Elegance, uniqueness, and attention to detail are the hallmarks of our Invitations and Stationery service. Your wedding day is a reflection of your love story, and the first glimpse your guests will have into this beautiful journey is through your wedding invitations. Our team of skilled graphic designers and stationery experts is dedicated to creating stunning, one-of-a-kind stationery that encapsulates the essence of your love.We understand that every couple has a unique vision for their special day. That's why we offer personalized, bespoke designs that are tailored to your specific theme, style, and preferences. Whether you dream of a classic, traditional affair or a contemporary and whimsical celebration, our designs are adaptable to match your individuality."
+      },
+      {
+        "id": 8,
+        "serviceName": "Transportation Services",
+        "image": "https://i.ibb.co/vPMrsWB/transportation.jpg",
+        "price": "$900",
+        "shortDescription": "Luxury transportation for you and your guests.",
+        "detailsDescription": "Your wedding day is a remarkable journey, and every detail should be perfect. Our Transportation Service ensures that you and your guests arrive in style, comfort, and on time, adding an extra touch of luxury and convenience to your special day.We offer a fleet of meticulously maintained vehicles, ranging from elegant limousines to vintage cars, to cater to your unique preferences. Our professional chauffeurs are experienced and committed to providing a safe and smooth ride, allowing you to relax and enjoy the moment.From transporting the bridal party to ensuring that your guests arrive at the venue promptly, our Transportation Service handles all logistical aspects. We understand the importance of punctuality, especially on your wedding day, and strive to make transportation a stress-free part of your celebration."
+      }
+]
+  

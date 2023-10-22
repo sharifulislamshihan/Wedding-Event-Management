@@ -14,7 +14,7 @@ const Carousel = () => {
     return (
         <div>
             <Swiper
-              
+
                 navigation={true}
                 modules={[Pagination, Navigation]}
                 className="mySwiper"
@@ -23,6 +23,7 @@ const Carousel = () => {
                 <SwiperSlide> <img src="/src/assets/image/carousel-img/carousel-2.jpg" alt="" /> </SwiperSlide>
                 <SwiperSlide> <img src="/src/assets/image/carousel-img/carousel-3.jpg" alt="" /> </SwiperSlide>
                 <SwiperSlide> <img src="/src/assets/image/carousel-img/carousel-4.jpg" alt="" /> </SwiperSlide>
+                <SwiperSlide> <img src="/src/assets/image/carousel-img/carousel-5.jpg" alt="" /> </SwiperSlide>
             </Swiper>
         </div>
     );
