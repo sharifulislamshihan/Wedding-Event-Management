@@ -1,16 +1,16 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
     const NavLinks = <>
-        <NavLink to="/"  activeClassName="active"><li className="text-xl font-heading font-bold hover:bg-slate-100"><a>HOME</a></li></NavLink>
+        <NavLink to="/" activeClassName="active"><li className="text-xl font-heading font-bold hover:bg-slate-100"><a>HOME</a></li></NavLink>
 
-        <NavLink to="/about"  activeClassName="active"><li className="text-xl font-heading font-bold hover:bg-slate-100"><a>ABOUT</a></li></NavLink>
+        <NavLink to="/about" activeClassName="active"><li className="text-xl font-heading font-bold hover:bg-slate-100"><a>ABOUT</a></li></NavLink>
 
-        <NavLink to="/services"  activeClassName="active"><li className="text-xl font-heading font-bold hover:bg-slate-100"><a>SERVICES</a></li></NavLink>
+        <NavLink to="/services" activeClassName="active"><li className="text-xl font-heading font-bold hover:bg-slate-100"><a>SERVICES</a></li></NavLink>
 
-        <NavLink to="/gallery"  activeClassName="active"><li className="text-xl font-heading font-bold hover:bg-slate-100"><a>GALLERY</a></li></NavLink>
+        <NavLink to="/gallery" activeClassName="active"><li className="text-xl font-heading font-bold hover:bg-slate-100"><a>GALLERY</a></li></NavLink>
 
-        <NavLink to="/contact"  activeClassName="active"><li className="text-xl font-heading font-bold hover:bg-slate-100"><a>CONTACT</a></li></NavLink>
+        <NavLink to="/contact" activeClassName="active"><li className="text-xl font-heading font-bold hover:bg-slate-100"><a>CONTACT</a></li></NavLink>
 
     </>
 
@@ -34,7 +34,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn border-black font-heading font-bold text-base md:text-xl">Login</a>
+                    <Link to='/login'><a className="btn border-black font-heading font-bold text-base md:text-xl">Login</a></Link>
                 </div>
             </div>
         </div>

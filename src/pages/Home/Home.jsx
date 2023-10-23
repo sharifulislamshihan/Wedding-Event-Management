@@ -73,7 +73,7 @@ const Home = () => {
                     <p className="font-paragraph text-xl font-medium text-center text-slate-500">Milestone Birthdays & Anniversaries, Engagements, Seasonal Celebrations, Children Parties.</p>
 
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mx-36 my-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mx-10 lg:mx-36 my-12">
                     {/* corporate */}
                     <div data-aos="flip-left" data-aos-duration="2200" className="border border-dotted border-slate-500 text-center py-10">
                         <img className="w-12 mx-auto" src="https://i.ibb.co/1vWMBw9/corporate.png" alt="" />
