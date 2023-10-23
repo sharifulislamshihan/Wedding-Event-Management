@@ -1,6 +1,11 @@
+/* Cormorant Garamond google font*/
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
 
+/* satisfy google font */
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+/* pacifico font*/
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 @tailwind base;
 @tailwind components;

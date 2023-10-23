@@ -9,6 +9,7 @@ export default {
       fontFamily: {
         heading: 'Cormorant Garamond, serif',
         paragraph: 'Satisfy, cursive' ,
+        pacifico: 'Pacifico, cursive',
       }
     },
   },
