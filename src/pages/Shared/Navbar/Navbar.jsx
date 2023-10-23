@@ -22,6 +22,10 @@ const Navbar = () => {
         <NavLink to="/gallery" activeClassName="active"><li className="text-xl font-heading font-bold hover:bg-slate-100"><a>GALLERY</a></li></NavLink>
 
         <NavLink to="/contact" activeClassName="active"><li className="text-xl font-heading font-bold hover:bg-slate-100"><a>CONTACT</a></li></NavLink>
+        {
+            user && <NavLink to="/Profile" activeClassName="active"><li className="text-xl font-heading font-bold hover:bg-slate-100"><a>Profile</a></li></NavLink>
+        }
+        
 
     </>
 

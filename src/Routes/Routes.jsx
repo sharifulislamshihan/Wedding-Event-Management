@@ -8,6 +8,8 @@ import Contact from "../pages/Contact/Contact";
 import ServiceDetails from "../pages/Services/ServiceDetails";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import PrivateRoute from "./PrivateRoute";
+import Profile from "../pages/Profile/Profile";
 
 
 
@@ -22,7 +24,7 @@ const Routes = createBrowserRouter([
             },
             {
                 path:"/about",
-                element:<About></About>
+                element:<PrivateRoute><About></About></PrivateRoute>
             },
             {
                 path:"/services",
@@ -31,12 +33,12 @@ const Routes = createBrowserRouter([
             },
             {
                 path:"/:id",
-                element:<ServiceDetails></ServiceDetails>,
+                element:<PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
                 loader: ()=> fetch('/services.json')
             },
             {
                 path:"/gallery",
-                element:<Gallery></Gallery>,
+                element:<PrivateRoute><Gallery></Gallery></PrivateRoute>,
             },
             {
                 path:"/contact",
@@ -50,6 +52,10 @@ const Routes = createBrowserRouter([
                 path:"/register",
                 element:<Register></Register>
             },
+            {
+                path: "/profile",
+                element:<Profile></Profile>
+            }
         ]
     }
 ])
