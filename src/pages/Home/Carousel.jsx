@@ -19,11 +19,11 @@ const Carousel = () => {
                 modules={[Pagination, Navigation]}
                 className="mySwiper"
             >
-                <SwiperSlide> <img src="/src/assets/image/carousel-img/carousel-1.jpg" alt="" /> </SwiperSlide>
-                <SwiperSlide> <img src="/src/assets/image/carousel-img/carousel-2.jpg" alt="" /> </SwiperSlide>
-                <SwiperSlide> <img src="/src/assets/image/carousel-img/carousel-3.jpg" alt="" /> </SwiperSlide>
-                <SwiperSlide> <img src="/src/assets/image/carousel-img/carousel-4.jpg" alt="" /> </SwiperSlide>
-                <SwiperSlide> <img src="/src/assets/image/carousel-img/carousel-5.jpg" alt="" /> </SwiperSlide>
+                <SwiperSlide> <img src="https://i.ibb.co/jZpxcsb/carousel-1.jpg" alt="" /> </SwiperSlide>
+                <SwiperSlide> <img src="https://i.ibb.co/M6VL2tg/carousel-2.jpg" alt="" /> </SwiperSlide>
+                <SwiperSlide> <img src="https://i.ibb.co/FB1fhqS/carousel-3.jpg" alt="" /> </SwiperSlide>
+                <SwiperSlide> <img src="https://i.ibb.co/vD09yCQ/carousel-4.jpg" alt="" /> </SwiperSlide>
+                <SwiperSlide> <img src="https://i.ibb.co/4jZxgN8/carousel-5.jpg" alt="" /> </SwiperSlide>
             </Swiper>
         </div>
     );
