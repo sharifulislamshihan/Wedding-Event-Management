@@ -4,44 +4,62 @@ import Footer from "../Shared/Footer/Footer";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { FaFacebook, FaGoogle } from 'react-icons/fa';
+import Swal from "sweetalert2";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
 
-    const { signInUser, signInWithGoogle, signInWithFacebook } = useContext(AuthContext);
-    const navigate = useNavigate()
+    const { signInUser, signInWithGoogle } = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    const successfulLogin = () => {
+        Swal.fire('Login Successful')
+    }
 
     const handleLogIn = e => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
 
+        if (!email || !password) {
+            toast.error('Email and password are required.', {position:"top-right"});
+            return;
+        }
+
         signInUser(email, password)
-            .then(result => {
-                console.log(result.user)
+            .then(userCredential => {
+                console.log(userCredential)
                 e.target.reset();
                 navigate('/');
+                successfulLogin();
             })
-            .catch(error => { console.log(error) })
+            .catch(error => {
+                // toast.error(error.message, { position: "top-right" });
+                if (error.code === 'auth/invalid-email') {
+                    toast.error('Invalid email.', {position:"top-right"});
+                }
+                else if(error.code === 'auth/wrong-password'){
+                    toast.error('Invalid password.', {position:"top-right"});
+                } 
+                else {
+                    toast.error('Invalid email or password.');
+                }
+                console.log(error);
+            });
     }
     const handleGoogleSignIn = () => {
         signInWithGoogle()
-            .then(result => {
-                console.log(result.user);
+            .then(userCredential => {
+                console.log(userCredential);
+                successfulLogin();
+                navigate('/');
             })
-            .catch(error =>{
+            .catch(error => {
                 console.error(error);
             })
     }
 
-    const handleFacebookSignIn = () => {
-        signInWithFacebook()
-            .then(result => {
-                console.log(result.user);
-            })
-            .catch(error =>{
-                console.error(error);
-            })
-    }
     return (
         <div>
             <Navbar></Navbar>
@@ -71,8 +89,9 @@ const Login = () => {
                     {/* Login with google */}
                     <button onClick={handleGoogleSignIn} className="btn border border-solid border-black font-heading text-xl font bold my-3"><FaGoogle className="text-2xl"></FaGoogle> Login With GOOGLE</button>
                     {/* login with facebook */}
-                    <button onClick={handleFacebookSignIn} className="btn border border-solid border-black font-heading text-xl font bold"><FaFacebook className="text-2xl"></FaFacebook> Login With FACEBOOK</button>
+                    <button className="btn border border-solid border-black font-heading text-xl font bold"><FaFacebook className="text-2xl"></FaFacebook> Login With FACEBOOK</button>
                 </form>
+                <ToastContainer />
             </div>
             <Footer></Footer>
         </div>

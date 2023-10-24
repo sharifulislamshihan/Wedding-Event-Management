@@ -47,7 +47,7 @@ const Navbar = () => {
                 <div className="navbar-end">
                     {
                         user ? <div className="flex">
-                            <img className="w-16 h-16 mt-5" src={user?.photoURL} alt="no img" />
+                            <img className="w-16 h-16 mt-5 rounded-lg" src={user?.photoURL} alt="no img" />
                             <span className="mr-5 text-2xl font-pacifico hidden md:block">Hey!! {user?.displayName}</span>
                             <Link to='/login'><a onClick={handleLogOut} className="btn border-black font-heading font-bold text-base md:text-xl">Logout</a></Link>
                             </div>

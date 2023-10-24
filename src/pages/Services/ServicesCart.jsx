@@ -3,12 +3,17 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from "react";
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const ServicesCart = ({ service }) => {
     const {id ,image, serviceName, price, shortDescription} = service;
     useEffect(() => {
         AOS.init();
     }, [])
+
+    const showbooked = () =>{
+        Swal.fire('Thank you for booking!!')
+    }
 
     return (
         <div>
@@ -20,7 +25,7 @@ const ServicesCart = ({ service }) => {
                     <p className="text-xl font-pacifico text-slate-500">{shortDescription} <Link to={`/${id}`}><span className='text-blue-700 underline'>Show details</span></Link></p>
                     
                     
-                        <button className="btn btn-primary bg-white text-[#ae9a64] border-[#ae9a64] border-solid my-5 hover:bg-[#ae9a64] hover:text-black">Book Now.</button>
+                        <button onClick={showbooked} className="btn btn-primary bg-white text-[#ae9a64] border-[#ae9a64] border-solid my-5 hover:bg-[#ae9a64] hover:text-black">Book Now.</button>
                     
                 </div>
             </div>

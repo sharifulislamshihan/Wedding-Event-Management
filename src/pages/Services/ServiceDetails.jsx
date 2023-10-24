@@ -3,10 +3,11 @@ import Footer from "../Shared/Footer/Footer";
 import Navbar from "../Shared/Navbar/Navbar";
 
 
+
 const ServiceDetails = () => {
     const serviceDetails = useLoaderData();
     const { id } = useParams();
-    console.log(serviceDetails, id);
+
 
     const details = serviceDetails.find(details => details.id == id)
     console.log(details.id);
