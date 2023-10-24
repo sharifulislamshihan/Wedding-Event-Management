@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 import Roots from "../layouts/Roots";
 import Home from "../pages/Home/Home";
 import About from "../pages/About/About";
@@ -9,6 +9,7 @@ import ServiceDetails from "../pages/Services/ServiceDetails";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import PrivateRoute from "./PrivateRoute";
+import PageNotFound from "../pages/PageNotFound/PageNotFound";
 
 
 
@@ -50,6 +51,9 @@ const Routes = createBrowserRouter([
             {
                 path:"/register",
                 element:<Register></Register>,
+            },
+            {
+                Component : { PageNotFound },
             },
         ]
     }
