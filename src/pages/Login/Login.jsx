@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../Shared/Navbar/Navbar";
 import Footer from "../Shared/Footer/Footer";
 import { useContext } from "react";
@@ -12,6 +12,8 @@ const Login = () => {
 
     const { signInUser, signInWithGoogle } = useContext(AuthContext);
     const navigate = useNavigate();
+    const location = useLocation();
+    console.log("location in login page", location);
 
     const successfulLogin = () => {
         Swal.fire('Login Successful')
@@ -31,7 +33,7 @@ const Login = () => {
             .then(userCredential => {
                 console.log(userCredential)
                 e.target.reset();
-                navigate('/');
+                navigate(location?.state ? location.state : '/');
                 successfulLogin();
             })
             .catch(error => {

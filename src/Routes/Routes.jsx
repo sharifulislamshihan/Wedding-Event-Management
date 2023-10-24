@@ -27,7 +27,7 @@ const Routes = createBrowserRouter([
             },
             {
                 path:"/services",
-                element:<PrivateRoute><Services></Services></PrivateRoute>,
+                element:<Services></Services>,
                 loader: ()=> fetch( '/services.json' )
             },
             {

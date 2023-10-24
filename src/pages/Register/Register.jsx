@@ -108,7 +108,7 @@ const Register = () => {
                                 placeholder="password"
                                 className=" w-full input input-bordered" required />
 
-                            <span className=" absolute translate-y-1/2 right-10 md: right-4 lg:right-5  " onClick={() => setShowPassword(!showPassword)}>
+                            <span className=" absolute translate-y-1/2 right-10 md:right-4 lg:right-5  " onClick={() => setShowPassword(!showPassword)}>
                                 {
                                     showPassword ? <FaEyeSlash className="text-2xl tooltip" data-tip="Hide"></FaEyeSlash> : <FaEye className="text-2xl tooltip" data-tip="Reveal"></FaEye>
                                 }
