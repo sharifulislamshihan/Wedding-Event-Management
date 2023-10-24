@@ -8,14 +8,17 @@ import Swal from "sweetalert2";
 
 // react toast
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
+// react icon
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { sendEmailVerification } from "firebase/auth";
 
 
 const Register = () => {
 
     const { createUser } = useContext(AuthContext);
     const navigate = useNavigate();
-    const[showPassword, setShowPassword] = useState(false);
+    const [showPassword, setShowPassword] = useState(false);
 
     const completeRegister = () => {
         Swal.fire('Thank you for being with us. Registration Completed!')
@@ -26,24 +29,34 @@ const Register = () => {
         const name = e.target.name.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(name, email, password);
+        const terms = e.target.terms.checked;
+        console.log(name, email, password, terms);
 
         // password validation
-        if (password.length <6){
+        if (password.length < 6) {
             toast.error("Password should be atleast 6 characters");
             return;
         }
         // !/^(?=.*[A-Z])(?=.*[!@#$%^&*])(.{6,})$/.test(password)
-        if(!/^(?=.*[A-Z])(?=.*[!@#$%^&*])/.test(password)){
+        else if (!/^(?=.*[A-Z])(?=.*[!@#$%^&*])/.test(password)) {
             toast.error("Password must contain atleast one capital letter and one special character");
             return;
         }
-        
+        else if (!terms) {
+            toast.error("Please accept terms and conditions");
+            return;
+        }
+
 
         // create user in firebase
         createUser(email, password)
             .then(userCredential => {
                 console.log(userCredential.user);
+                // send Verification
+                sendEmailVerification(userCredential.user)
+                    .then(() => {
+                        
+                    })
                 e.target.reset();
                 completeRegister();
                 navigate('/');
@@ -83,15 +96,27 @@ const Register = () => {
                         </label>
                         <input type="email" name="email" placeholder="email" className="input input-bordered" required />
                     </div>
-                    
+
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text font-heading text-2xl font-bold">PASSWORD</span>
-                            <span>Show</span>
                         </label>
-                        <input type="password" name="password" placeholder="password" className="input input-bordered" required />
+                        <div className="relative">
+                            <input
+                                type={showPassword ? "text" : "password"}
+                                name="password"
+                                placeholder="password"
+                                className=" w-full input input-bordered" required />
+
+                            <span className=" absolute translate-y-1/2 right-10 md: right-4 lg:right-5  " onClick={() => setShowPassword(!showPassword)}>
+                                {
+                                    showPassword ? <FaEyeSlash className="text-2xl tooltip" data-tip="Hide"></FaEyeSlash> : <FaEye className="text-2xl tooltip" data-tip="Reveal"></FaEye>
+                                }
+                            </span>
+
+                        </div>
                         <div className="flex gap-5 mt-2">
-                            <input type="checkbox" name="" id="" />
+                            <input type="checkbox" name="terms" id="" />
                             <p className="text-xl font-paragraph
                             font-bold">Accept Terms & Conditions</p>
                         </div>
@@ -99,7 +124,7 @@ const Register = () => {
                     <div className="form-control mt-6">
                         <button className="btn btn-primary font-heading text-2xl font-bold">REGISTER</button>
                     </div>
-                    <p className="text-xl font-paragraph font-semibold">Already have an account? <Link to='/login' className="text-blue-500 underline">Login</Link></p>
+                    <p className="text-2xl font-paragraph font-semibold mt-2">Already have an account? <Link to='/login' className="text-blue-500 underline">Login</Link></p>
                 </form>
                 <ToastContainer />
             </div>
