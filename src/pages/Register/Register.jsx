@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../Shared/Navbar/Navbar";
 import Footer from "../Shared/Footer/Footer";
 import { useContext } from "react";
@@ -8,7 +8,8 @@ import { AuthContext } from "../../Providers/AuthProvider";
 const Register = () => {
 
     const { creatUser } = useContext(AuthContext);
-    
+    const navigate = useNavigate();
+
 
     const handleRegister = e => {
         e.preventDefault();
@@ -19,12 +20,14 @@ const Register = () => {
 
         // create user in firebase
         creatUser(email, password)
-        .then(result =>{
-            console.log(result.user);
-        })
-        .error(error => {
-            console.error(error)
-        })
+            .then(result => {
+                console.log(result.user);
+                e.target.reset();
+                navigate('/');
+            })
+            .error(error => {
+                console.error(error)
+            })
 
     }
     return (

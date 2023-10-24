@@ -9,7 +9,6 @@ import ServiceDetails from "../pages/Services/ServiceDetails";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import PrivateRoute from "./PrivateRoute";
-import Profile from "../pages/Profile/Profile";
 
 
 
@@ -50,12 +49,8 @@ const Routes = createBrowserRouter([
             },
             {
                 path:"/register",
-                element:<Register></Register>
+                element:<Register></Register>,
             },
-            {
-                path: "/profile",
-                element:<Profile></Profile>
-            }
         ]
     }
 ])

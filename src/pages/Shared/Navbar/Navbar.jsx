@@ -22,10 +22,6 @@ const Navbar = () => {
         <NavLink to="/gallery" activeClassName="active"><li className="text-xl font-heading font-bold hover:bg-slate-100"><a>GALLERY</a></li></NavLink>
 
         <NavLink to="/contact" activeClassName="active"><li className="text-xl font-heading font-bold hover:bg-slate-100"><a>CONTACT</a></li></NavLink>
-        {
-            user && <NavLink to="/Profile" activeClassName="active"><li className="text-xl font-heading font-bold hover:bg-slate-100"><a>Profile</a></li></NavLink>
-        }
-        
 
     </>
 
@@ -51,7 +47,8 @@ const Navbar = () => {
                 <div className="navbar-end">
                     {
                         user ? <div className="flex">
-                            <span className="mr-5 text-2xl font-pacifico hidden md:block">Hey!! {user.email}</span>
+                            <img className="w-16 h-16 mt-5" src={user?.photoURL} alt="no img" />
+                            <span className="mr-5 text-2xl font-pacifico hidden md:block">Hey!! {user?.displayName}</span>
                             <Link to='/login'><a onClick={handleLogOut} className="btn border-black font-heading font-bold text-base md:text-xl">Logout</a></Link>
                             </div>
                             : 

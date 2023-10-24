@@ -3,10 +3,11 @@ import Navbar from "../Shared/Navbar/Navbar";
 import Footer from "../Shared/Footer/Footer";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { FaFacebook, FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
 
-    const { signInUser } = useContext(AuthContext);
+    const { signInUser, signInWithGoogle, signInWithFacebook } = useContext(AuthContext);
     const navigate = useNavigate()
 
     const handleLogIn = e => {
@@ -15,12 +16,31 @@ const Login = () => {
         const password = e.target.password.value;
 
         signInUser(email, password)
-            .then(result =>{
+            .then(result => {
                 console.log(result.user)
                 e.target.reset();
                 navigate('/');
             })
-            .catch(error => {console.log(error)})
+            .catch(error => { console.log(error) })
+    }
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then(result => {
+                console.log(result.user);
+            })
+            .catch(error =>{
+                console.error(error);
+            })
+    }
+
+    const handleFacebookSignIn = () => {
+        signInWithFacebook()
+            .then(result => {
+                console.log(result.user);
+            })
+            .catch(error =>{
+                console.error(error);
+            })
     }
     return (
         <div>
@@ -43,10 +63,15 @@ const Login = () => {
                             <a href="#" className="label-text-alt link link-hover font-heading text-lg font-bold">Forgot password?</a>
                         </label>
                     </div>
-                    <div className="form-control mt-6">
+                    <div className="form-control">
                         <button className="btn btn-primary">Login</button>
                     </div>
                     <p className="font-paragraph text-2xl font-bold">Dont have an account? <Link to='/register' className="text-blue-500">Register with us</Link></p>
+
+                    {/* Login with google */}
+                    <button onClick={handleGoogleSignIn} className="btn border border-solid border-black font-heading text-xl font bold my-3"><FaGoogle className="text-2xl"></FaGoogle> Login With GOOGLE</button>
+                    {/* login with facebook */}
+                    <button onClick={handleFacebookSignIn} className="btn border border-solid border-black font-heading text-xl font bold"><FaFacebook className="text-2xl"></FaFacebook> Login With FACEBOOK</button>
                 </form>
             </div>
             <Footer></Footer>
