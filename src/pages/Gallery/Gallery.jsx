@@ -6,7 +6,7 @@ const Gallery = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <h3 className="text-3xl">This is Gallery section</h3>
+            <h3 className="text-3xl">This is Gallery section coming soon!!</h3>
             <Footer></Footer>
         </div>
     );

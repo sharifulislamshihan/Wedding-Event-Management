@@ -12,7 +12,7 @@ import { Pagination, Navigation } from 'swiper/modules';
 
 const Carousel = () => {
     return (
-        <div>
+        <div className='relative overflow-visible'>
             <Swiper
 
                 navigation={true}
